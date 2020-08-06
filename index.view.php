@@ -7,9 +7,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<main class="contenido-principal">
-		<fieldset>
-			<legend>Contactanos</legend>
+	<main class="wrap">
 			<form class="formulario">
 				<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre:" value="">
 				<input type="email" name="correo" class="form-control" id="correo" placeholder="Correo:" value="">
@@ -18,7 +16,6 @@
 
 				<input type="submit" name="submit" class="btn btn-primary" value="Enviar Correo">
 			</form>
-		</fieldset>
 	</main>
 </body>
 </html>
