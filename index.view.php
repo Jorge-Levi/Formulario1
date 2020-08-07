@@ -9,10 +9,10 @@
 <body>
 	<main class="wrap">
 			<form class="formulario" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-				<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre:" value="">
-				<input type="email" name="correo" class="form-control" id="correo" placeholder="Correo:" value="">
+				<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre:" value="<?php if(isset($enviado) && !empty($nombre)) echo $nombre ;?>">
+				<input type="email" name="correo" class="form-control" id="correo" placeholder="Correo:" value="<?php if(isset($enviado) && !empty($correo)) echo $correo ;?>">
 
-				<textarea name="mensaje" class="form-control" id="mensaje" placeholder="Mensaje: "></textarea>
+				<textarea name="mensaje" class="form-control" id="mensaje" placeholder="Mensaje: "><?php if(isset($enviado) && !empty($mensaje)) echo $mensaje ;?></textarea>
 
 				<?php if(!empty($errores)): ?>
 					<div class="alert error">

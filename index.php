@@ -23,6 +23,26 @@ if(isset($_POST['submit'])){
     }else{
         $errores .= 'Por favor, ingresa un correo<br>';
     }
+
+    if(isset($_POST['mensaje']) && !empty($_POST['mensaje'])){
+        $mensaje = $_POST['mensaje'];
+        $mensaje = trim($mensaje);
+        $mensaje = filter_var($mensaje,FILTER_SANITIZE_STRING);
+        $mensaje = htmlspecialchars($mensaje);
+        $mensaje = stripslashes($mensaje);
+    }else{
+        $errores .= 'Por favor, ingresa un mensaje<br>';
+    }
+
+    if(!$errores){
+        $destinatario = 'tapialugardo29@gmail.com';
+        $asunto = 'Correo Enviado desde formulario';
+        $mensajePreparado = "De: $nombre \n";
+        $mensajePreparado = "Correo: $correo \n";
+        $mensajePreparado = "Mensaje: $mensaje";
+        // mail($destinatario,$asunto,$mensajePreparado);
+        $enviado = true;
+    }
 }
 
 require('index.view.php');
